@@ -13,34 +13,38 @@ while shouldAsk:
     if level.lower() == 'easy' or level.lower() == 'hard':
         shouldAsk = False
 if level.lower() == 'easy':
-    print("you have 10 attempts")
+    attempts = 10
     time.sleep(1)
     for i in range(10):
+        print(f"you have {attempts} attempts")
         guess = int(input("Guess a number: "))
         if guess == number:
             print('CORRECT!! You guessed right')
             IsWin = True
             break
-        elif guess < number:
+        elif guess < number and attempts > 1:
             print('Too low.')
             print('Guess again')
-        else:
+        elif attempts > 1:
             print('Too high')
             print('guess again')
+        attempts -= 1
 else:
-    print("you have 5 attempts")
+    attempts = 5
     time.sleep(1)
     for i in range(5):
+        print(f"you have {attempts} attempts")
         guess = int(input("Guess a number: "))
         if guess == number:
             print('CORRECT!! You guessed right')
             IsWin = True
             break
-        elif guess < number:
+        elif guess < number and attempts > 1:
             print('Too low.')
             print('Guess again')
-        else:
+        elif attempts > 1:
             print('Too high')
             print('guess again')
+        attempts -= 1
 if not IsWin:
-    print("'You've run out of attempts!! Try again later.")
+    print("You've run out of attempts!! Try again.")
