@@ -10,7 +10,7 @@ shouldAsk = True
 number = random.randint(1, 100)
 while shouldAsk:
     level = input("select difficulty level: Type 'easy' or 'Hard' : ")
-    if level.lower() == 'easy' or level.lower() == 'had':
+    if level.lower() == 'easy' or level.lower() == 'hard':
         shouldAsk = False
 if level.lower() == 'easy':
     attempts = 10
